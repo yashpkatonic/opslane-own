@@ -30,6 +30,7 @@ class SlackBot:
         )
         self.bot_user_id: str | None = None
         self.allowed_bot_ids: list[str] = []
+        self.alert_channels: Set[str] = set()  # Initialize alert_channels as an empty set
 
         asyncio.create_task(self._initialize())
         self._register_handlers()
